@@ -1,0 +1,21 @@
+Collection: market
+
+Document members:
+
+publicKey
+category (name of the svg, probably ENUM)
+title (string)
+
+prices[]
+    0: against[] ("yes")
+        0: 51c
+        1: 42c
+    1: against[] ("no")
+        0: 51c
+        1: 60c
+
+
+outcomes
+marketLockTimestamp (dateTime)
+
+

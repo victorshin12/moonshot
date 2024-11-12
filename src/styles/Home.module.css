@@ -1,0 +1,442 @@
+.container {
+  padding: 0 2rem;
+  min-height: 86vh;
+}
+
+.footer {
+  display: flex;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.title a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+}
+
+.title,
+.description {
+  text-align: left;
+}
+
+.description {
+  padding: 2.5rem 0;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #fafafa;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-width: 1000px;
+}
+
+/* .card h2 {
+  margin: 0.2rem 0 0 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+} */
+
+.card h3 {
+  opacity: 75%;
+  margin: 0 0 1rem 0;
+}
+
+.card h4 {
+  font-size: 0.9rem;
+}
+
+.card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* START: Top Bar */
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+.wallet_adapter_button_trigger_light_mode {
+  background-color: #353535;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  height: 40px;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 12px;
+  padding: 18px 16px 18px 16px;
+  transition: 0.3s;
+  border: 1px solid #353535;
+}
+.wallet_adapter_button_trigger_light_mode:hover {
+  background: rgba(255, 255, 255, 0.5) !important;
+  color: #353535;
+}
+.wallet_adapter_button_trigger_light_mode:hover:disabled {
+  background: #3d3d3d !important;
+  border-color: #3d3d3d;
+  color: white;
+}
+
+.wallet_adapter_button_trigger_dark_mode {
+  background-color: rgb(237, 237, 237);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #131821;
+  height: 40px;
+  font-weight: 500;
+  font-size: 15px;
+  border-radius: 12px;
+  padding: 18px 16px 18px 16px;
+  transition: 0.3s;
+  border: 1px solid rgb(237, 237, 237);
+}
+.wallet_adapter_button_trigger_dark_mode:hover {
+  background-color: transparent !important;
+  color: white;
+}
+.wallet_adapter_button_trigger_dark_mode:hover:disabled {
+  background: #ebecf0 !important;
+  border-color: #ebecf0;
+  color: #23252b;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  .wallet_adapter_button_trigger_light_mode {
+    background-image: url("/wallet.png");
+    background-size: 22px;
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    padding-left: 8px;
+  }
+  .wallet_adapter_button_trigger_light_mode:focus,
+  .wallet_adapter_button_trigger_light_mode:hover,
+  .wallet_adapter_button_trigger_light_mode:active {
+    background-color: transparent !important;
+    filter: invert(0%);
+  }
+
+  .wallet_adapter_button_trigger_dark_mode {
+    background-image: url("/wallet.png");
+    background-size: 22px;
+    background-color: transparent;
+    border: none;
+    font-size: 0;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    padding-left: 8px;
+  }
+  .wallet_adapter_button_trigger_dark_mode:focus,
+  .wallet_adapter_button_trigger_dark_mode:hover,
+  .wallet_adapter_button_trigger_dark_mode:active {
+    background-color: transparent !important;
+    filter: invert(100%);
+  }
+}
+/* END: Top Bar */
+
+.text_link {
+  position: relative;
+  text-decoration: none;
+}
+
+.text_link::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 88%;
+  height: 2px;
+  bottom: 0;
+  right: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.text_link:hover::before {
+  transform: scaleX(1);
+}
+
+.glassmorphism {
+  /* From https://css.glass */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/* START: Three Button */
+.threeButton {
+  --purple: #db07d1;
+  --pink: #f2056f;
+  --blue: #61dafb;
+
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background-color: #acc7ed;
+  color: #fff;
+  border-radius: 14px;
+  outline: none;
+  font-size: 21px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.shapes {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: 14px;
+  background: linear-gradient(
+    60deg,
+    var(--blue) 0%,
+    #d6cbf6 30%,
+    var(--pink) 70%
+  );
+}
+
+.pinkBlush {
+  position: absolute;
+  bottom: -15px;
+  width: 100px;
+  height: 30px;
+  filter: blur(20px);
+  right: 20px;
+  background: var(--purple);
+}
+
+.blueBlush {
+  position: absolute;
+  bottom: -15px;
+  width: 100px;
+  height: 30px;
+  filter: blur(20px);
+  left: 20px;
+  background: var(--blue);
+}
+
+.shapesContainer {
+  position: absolute;
+  top: -100px;
+  bottom: -100px;
+  left: -100px;
+  right: -100px;
+  width: calc(100% + 200px);
+  pointer-events: none;
+}
+
+.shapesCanvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shapesLabel {
+  width: 180px;
+  padding: 20px 0;
+  transform: translateZ(0);
+  font-weight: 700;
+  z-index: 1;
+}
+/* END: Three Button */
+
+.scroll_container::-webkit-scrollbar {
+  display: none;
+}
+
+.activity_container::-webkit-scrollbar {
+  height: 0.4em;
+  background: transparent;
+}
+.activity_container::-webkit-scrollbar-thumb {
+  background: #c5c5c5;
+  border-radius: 10px;
+}
+
+.modal_container::-webkit-scrollbar {
+  width: 0.2em;
+  background: transparent;
+}
+
+.returns_canvas_container {
+  height: auto;
+  width: auto;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .returns_canvas_container {
+    height: 27vh;
+  }
+}
+
+@keyframes animatedgradient {
+  0% {
+    opacity: 0;
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    opacity: 1;
+    background-position: 0% 50%;
+  }
+}
+
+.homeGradientGlow::before {
+  background: var(--primary-glow);
+  border-radius: 50%;
+  width: 400px;
+  height: 300px;
+  margin-left: -300px;
+}
+
+.homeGradientGlow::after {
+  background: var(--primary-glow);
+  width: 320px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.homeGradientGlow::before,
+.homeGradientGlow::after {
+  z-index: -1;
+  content: "";
+  left: 65%;
+  top: 5%;
+  position: absolute;
+  filter: blur(45px);
+  transform: translateZ(0);
+}
+
+.marketGradientGlow::before {
+  background: var(--primary-glow);
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  margin-top: 180px;
+  margin-left: -70px;
+}
+
+.marketGradientGlow::after {
+  background: var(--primary-glow);
+  width: 300px;
+  height: 300px;
+  margin-left: 120px;
+}
+
+.marketGradientGlow::before,
+.marketGradientGlow::after {
+  z-index: -1;
+  content: "";
+  left: 60%;
+  top: 20%;
+  position: absolute;
+  filter: blur(45px);
+  transform: translateZ(0);
+}
+@media screen and (max-width: 768px) {
+  .homeGradientGlow::before,
+  .homeGradientGlow::after {
+    width: 50px;
+    height: 200px;
+  }
+  .marketGradientGlow::before,
+  .marketGradientGlow::after {
+    left: 0;
+    width: 50px;
+    height: 300px;
+  }
+}
+
+/* START: Portfolio */
+.portfolioCard {
+  transform: translateZ(0);
+  justify-content: center;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+.portfolioCard::before,
+.portfolioCard::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+}
+.portfolioCard::before {
+  background: rgba(255, 255, 255, 0.13);
+  align-self: center;
+}
+/* Conic Gradient Animation */
+.portfolioCard::before {
+  animation: 6s rotate linear infinite;
+  background: var(--tile-border);
+}
+
+/* Inner Square */
+.portfolioCard::after {
+  inset: 0;
+  padding: 1px;
+  border-radius: var(--border-radius);
+  background-clip: content-box;
+}
+
+@media (prefers-reduced-motion) {
+  .portfolioCard::before {
+    animation: none;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+/* END: Portfolio */

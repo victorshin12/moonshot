@@ -1,0 +1,8 @@
+MongoDB conection string
+mongodb+srv://victorshin12:Tlswocjf576?@pascal.bancr.mongodb.net/?retryWrites=true&w=majority&appName=pascal
+
+
+
+Pyth
+    - Used for live cryptocurrency prices
+    - We don't really need it unless we are going to make bets on crypto market
