@@ -3,7 +3,6 @@ Collection: market
 Document members:
 
 publicKey
-category (name of the svg, probably ENUM)
 title (string)
 
 prices[]
@@ -18,4 +17,14 @@ prices[]
 outcomes
 marketLockTimestamp (dateTime)
 
+liquidityTotal (float?)
+    - how much money can be put in without moving the price too much?
+matchedTotal
+    - total volume traded
 
+category
+    - "Financial",
+    - "Economics",
+    - "Crypto",
+    - "Climate",
+    - "Other",

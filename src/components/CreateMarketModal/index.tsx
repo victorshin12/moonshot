@@ -48,15 +48,15 @@ async function createVerboseMarket(
   lockTimestamp,
   setCreateStatus
 ) {
-  const checkRoles = await checkOperatorRoles(
-    program,
-    program.provider.publicKey
-  );
+  // const checkRoles = await checkOperatorRoles(
+  //   program,
+  //   program.provider.publicKey
+  // );
 
-  if (!checkRoles.data.market)
-    throw new Error(
-      `Currently set wallet ${program.provider.publicKey} does not have the operator role`
-    );
+  // if (!checkRoles.data.market)
+  //   throw new Error(
+  //     `Currently set wallet ${program.provider.publicKey} does not have the operator role`
+  //   );
 
   // Generate a publicKey to represent the event
   const eventAccountKeyPair = Keypair.generate();
@@ -142,15 +142,18 @@ export const CreateMarketModal = () => {
       category,
       lockTimestamp,
       description,
-      resolutionSource,
-      resolutionValue,
-      oracleSymbol,
-      ticker,
+      // resolutionSource,
+      // resolutionValue,
+      // oracleSymbol,
+      // ticker,
       tag,
       program,
     } = values;
 
     try {
+      console.log("program: " + program);
+
+      // Fails here
       const marketPk = await createVerboseMarket(
         program,
         title,
@@ -181,10 +184,10 @@ export const CreateMarketModal = () => {
         category,
         description,
         tag,
-        resolutionSource,
-        resolutionValue,
-        oracleSymbol,
-        ticker,
+        // resolutionSource,
+        // resolutionValue,
+        // oracleSymbol,
+        // ticker,
         marketCreateTimestamp,
         marketAccount,
         priceData,
@@ -213,11 +216,11 @@ export const CreateMarketModal = () => {
       .min(new Date(), "Resolution date must be in the future")
       .required(),
     description: yup.string().required("Resolution criteria is required"),
-    resolutionSource: yup.string(),
+    // resolutionSource: yup.string(),
     tag: yup.string(),
-    ticker: yup.string(),
-    oracleSymbol: yup.string(),
-    resolutionValue: yup.string(),
+    // ticker: yup.string(),
+    // oracleSymbol: yup.string(),
+    // resolutionValue: yup.string(),
   });
 
   return (
@@ -231,10 +234,10 @@ export const CreateMarketModal = () => {
           lockTimestamp: "",
           description: "",
           tag: "",
-          resolutionSource: "",
-          ticker: "",
-          oracleSymbol: "",
-          resolutionValue: "",
+          // resolutionSource: "",
+          // ticker: "",
+          // oracleSymbol: "",
+          // resolutionValue: "",
         }}
         validationSchema={validationSchema}
         onSubmit={async (values, actions) => {

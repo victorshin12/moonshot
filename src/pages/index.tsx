@@ -36,7 +36,6 @@ const Home: NextPage = ({
   //   }
   // };
 
-
   return (
     <div>
       <div className={styles.container}>
@@ -107,7 +106,8 @@ const Home: NextPage = ({
           </Box>
         </Layout>
       </div>
-      <Banner />
+      {/* Some weird banner for USDC drops */}
+      {/* <Banner /> */}
     </div>
   );
 };

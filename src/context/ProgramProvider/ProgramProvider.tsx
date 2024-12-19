@@ -1,4 +1,4 @@
-import { AnchorProvider, Program } from "@project-serum/anchor";
+import { AnchorProvider, Idl, Program } from "@project-serum/anchor";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { Connection, PublicKey } from "@solana/web3.js";
 import { ReactNode, useEffect, useReducer, useState } from "react";
@@ -27,13 +27,25 @@ export const ProgramProvider = ({ children }: ProgramProviderProps) => {
     }
   }, [wallet.publicKey?.toString()]);
 
+
   const setProgram = async () => {
     try {
-      if (provider !== null && wallet.publicKey) {
-        const program = await Program.at(
-          new PublicKey(process.env.NEXT_PUBLIC_PROGRAM_ID!),
-          provider
-        );
+      if (provider !== null && wallet.publicKey) { // true if wallet connected
+        console.log("Program not yet set");
+
+        let program: Program<Idl>;
+
+        try {
+          program = await Program.at(
+            new PublicKey(process.env.NEXT_PUBLIC_PROGRAM_ID!),
+            provider
+          );
+        } catch (error) {
+          console.log("Error setting program", error);
+          throw "Cannot set program";
+        }
+        console.log("Program set", program);
+
         dispatch({
           type: ProgramActionTypes.SET_PROGRAM,
           payload: program,

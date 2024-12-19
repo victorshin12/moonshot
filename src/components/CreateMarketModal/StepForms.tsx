@@ -139,7 +139,7 @@ export const Form2 = ({ title }) => {
         )}
       </Field>
 
-      <Field name="resolutionSource">
+      {/* <Field name="resolutionSource">
         {({ field, form }) => (
           <FormControl
             isInvalid={form.errors.keyword && form.touched.keyword}
@@ -158,7 +158,7 @@ export const Form2 = ({ title }) => {
             <FormErrorMessage>{form.errors.keyword}</FormErrorMessage>
           </FormControl>
         )}
-      </Field>
+      </Field> */}
 
       <Field name="tag">
         {({ field, form }) => (
@@ -184,7 +184,7 @@ export const Form2 = ({ title }) => {
         )}
       </Field>
 
-      <Text
+      {/* <Text
         pt={6}
         pb={3}
         textDecoration={"underline"}
@@ -249,12 +249,13 @@ export const Form2 = ({ title }) => {
             )}
           </Field>
         </Stack>
-      </Collapse>
+      </Collapse> */}
     </Stack>
   );
 };
 
 export const SubmittedForm = ({ publicKey, success, isSubmitting, status }) => {
+  console.log(status);
   return (
     <Box color={"gray.50"}>
       <Stack mb={10} mt={12} transition={"all 2s ease-in-out"}>
